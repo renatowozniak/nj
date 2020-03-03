@@ -1,0 +1,34 @@
+.superior {
+    background: rgba(0, 0, 0, 0.067);
+    text-align: center;
+    font-size: 30px;
+    font-style: bold;
+}
+
+/*body {
+    width: 600px;
+    margin: 0 auto;
+    background-color: #FF9500;
+    padding: 0 20px 20px 20px;
+    border: 5px solid black;
+  }
+  */
+
+  .corpotodo {
+    width: 600px;
+    margin: 0 auto;
+    background-color: #FF9500;
+    padding: 0 20px 20px 20px;
+    border: 5px solid black;    
+  }
+
+  #sair{ text-align: center }
+  .botaoEnviar{
+      width: 350px;
+      text-align: center;
+      padding: 15px 20px;
+      border: 1px solid #eee;
+      border-radius: 6px;
+      background-color: #FF9500;
+      font-size: 18px;
+  }
