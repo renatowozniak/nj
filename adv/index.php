@@ -1,25 +1,26 @@
-
-<!doctype html>
+<?php
+    session_start();
+?>
+<!DOCTYPE html>
 <html lang="pt_BR">
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="css/styles.css" rel="stylesheet">
 
-  <title>
-    :: NEWJUD ::
-  </title>
+  <title>NEWJUD</title>
 
 </head>
 <body>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/core/layout/header.php'; ?>
     <div class="corpotodo">
-        <div class="superior">
-            NEWJUD
-        </div>
-
-        <div>
+        <div id="container">
+             <div>
+            <a class="linkAcesso" href="agenda.php">AGENDA</a>
+            <hr>
+            <br>
             <?php
-            if ($diretorio = opendir("./"))
+            if ($diretorio = opendir("."))
             {
             while(false !== ($pasta = readdir($diretorio)))
             {
@@ -28,18 +29,11 @@
                     echo "<a href='$pasta'>$pasta</a><br>";
                 }
             }
-            closedir($diretorio);
+                closedir($diretorio);
             }
             ?>
         </div>
+        </div>
     </div>
-    <div id="sair">
-        <!--<a href="http://localhost/adv/login/">SAIR</a>-->
-        <form method="get" action="http://localhost/adv/login/">
-            <!--<button text-align: center type="submit">SAIR</button></form>-->
-            <input type="submit" name="botao" value="SAIR" class="botaoEnviar" />
-
-    </div>
-    
 </body>
 </html>

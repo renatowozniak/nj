@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <link rel="icon" href="imagens/favicon.ico">
 
-    <title>NEWJUD | Login</title>
+    <title>:: NEWJUD / Login ::</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -34,15 +34,19 @@
   </head>
 
   <body>
+
     <div class="container">
 
-      <form class="form-signin" method="POST" action="valida.php">
-        <h2 class="form-signin-heading">Área Restrita</h2>
+      <form class="form-signin" method="POST" action="registra.php">
+        <h2 class="form-signin-heading">Registrar</h2>
         <label for="inputEmail" class="sr-only">Email</label>
         <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
         <label for="inputPassword" class="sr-only">Senha</label>
         <input type="password" name="senha" id="inputPassword" class="form-control" placeholder="Senha" required>
-        <button class="btn btn-lg btn-danger btn-block" type="submit">Acessar</button>
+
+         <label for="inputCidade" class="sr-only">Cidade</label>
+        <input type="password" name="senha" id="inputPassword" class="form-control" placeholder="Cidade" required>
+        <button class="btn btn-lg btn-danger btn-block" type="submit">Registrar</button>
       </form>
 	  <p class="text-center text-danger">
 			<?php if(isset($_SESSION['loginErro'])){
@@ -59,6 +63,7 @@
 			?>
 		</p>
     </div> <!-- /container -->
+
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
