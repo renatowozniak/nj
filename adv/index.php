@@ -15,17 +15,18 @@
     <?php include $_SERVER['DOCUMENT_ROOT'].'/core/layout/header.php'; ?>
     <div class="corpotodo">
         <div id="container">
+            <?php if(empty($_GET['tipo'])){ ?>
+
              <div>
-            <a class="linkAcesso" href="agenda.php">AGENDA</a>
+            <a class="linkAcesso" href="/adv/?tipo=agenda">AGENDA</a>
+            <a class="linkAcesso" href="/adv/?tipo=acoes">AÇÕES</a>
+            <a class="linkAcesso" href="/adv/?tipo=teste">TESTE</a>
             <hr>
             <br>
             <?php
-            if ($diretorio = opendir("."))
-            {
-            while(false !== ($pasta = readdir($diretorio)))
-            {
-                if(is_dir($pasta) and ($pasta != ".") and ($pasta != ".."))
-                {
+            if ($diretorio = opendir(".")){
+            while(false !== ($pasta = readdir($diretorio))) {
+                if(is_dir($pasta) and ($pasta != ".") and ($pasta != "..")){
                     echo "<a href='$pasta'>$pasta</a><br>";
                 }
             }
@@ -33,6 +34,11 @@
             }
             ?>
         </div>
+<?php
+    }else{
+        include 'acesso.php';
+    }
+    ?>
         </div>
     </div>
 </body>
