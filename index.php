@@ -1,7 +1,7 @@
 <?php 
     session_start(); 
 
-    if(isset($_SESSION['usuarioNome'])){
+    if(isset($_SESSION['usuarioNome']) && isset($_SESSION['usuarioCidade'])){
         header('Location: /adv');
     }
 ?>
@@ -11,7 +11,6 @@
         <meta charset=utf-8>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>:: NEWJUD ::</title>
-        <!-- Load Roboto font -->
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <!-- Load css styles -->
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -52,7 +51,7 @@
                             <li><a href="#clients">Clientes</a></li>
                             <li><a href="#price">PLANOS</a></li>
                             <li><a href="#contact">Contato</a></li>
-                            <li><a href="/adv/login/">Painel</a></li>
+                            <li><a href="/login/">Painel</a></li>
                         </ul>
                     </div>
                     <!-- End main navigation -->

@@ -11,7 +11,7 @@
 	       <?php if($_SESSION['usuarioNome']){ ?>
 
 	        <form method="get" action="login/sair">
-	        	 <?php echo '<span class="nomeDisplay">'.$_SESSION['usuarioNome'].'</span>'; ?>
+	        	 <?php echo '<span class="nomeDisplay">'.$_SESSION['usuarioNome'].' &#8226; </span>'; ?>
 	            <!--<button text-align: center type="submit">SAIR</button></form>-->
 	            <input type="submit" name="botao" value="SAIR" class="botaoEnviar" />
 	        </form>
