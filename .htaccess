@@ -1,0 +1,10 @@
+Options +MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+ErrorDocument 404 /notfound.php
+
+
+RewriteRule ^adv/(.*)$ adv/?tipo=$1 [QSA]
+

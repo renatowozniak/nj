@@ -1,5 +1,8 @@
 <?php
     session_start();
+
+    if(empty($_SESSION['usuarioNome']) || empty($_SESSION['usuarioCidade']))
+        header('Location: /');
 ?>
 <!DOCTYPE html>
 <html lang="pt_BR">
@@ -18,9 +21,9 @@
             <?php if(empty($_GET['tipo'])){ ?>
 
              <div>
-            <a class="linkAcesso" href="/adv/?tipo=agenda">AGENDA</a>
-            <a class="linkAcesso" href="/adv/?tipo=acoes">AÇÕES</a>
-            <a class="linkAcesso" href="/adv/?tipo=teste">TESTE</a>
+                <a class="linkAcesso" href="/adv/agenda">AGENDA</a>
+                <a class="linkAcesso" href="/adv/acoes">AÇÕES</a>
+                <a class="linkAcesso" href="/adv/teste">TESTE</a>
             <hr>
             <br>
             <?php
@@ -34,11 +37,11 @@
             }
             ?>
         </div>
-<?php
-    }else{
-        include 'acesso.php';
-    }
-    ?>
+            <?php
+                }else{
+                    include 'acesso.php';
+                }
+            ?>
         </div>
     </div>
 </body>

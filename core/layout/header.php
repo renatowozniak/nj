@@ -8,10 +8,9 @@
 			<div id="sair">
 	        <!--<a href="http://localhost/adv/login/">SAIR</a>-->
 	       
-
 	       <?php if($_SESSION['usuarioNome']){ ?>
 
-	        <form method="get" action="login/">
+	        <form method="get" action="login/sair">
 	        	 <?php echo '<span class="nomeDisplay">'.$_SESSION['usuarioNome'].'</span>'; ?>
 	            <!--<button text-align: center type="submit">SAIR</button></form>-->
 	            <input type="submit" name="botao" value="SAIR" class="botaoEnviar" />

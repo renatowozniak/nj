@@ -6,7 +6,6 @@
   ini_set('display_errors', true);
 ?>
 
-<div class="container">
 <?php
   $cidade = $_SESSION['usuarioCidade'];
 
@@ -34,4 +33,3 @@
     echo '<div id="vazio">Não existe '.$tipo.' disponível no momento :(</div>';
   }
 ?>
-</div>
