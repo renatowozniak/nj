@@ -20,10 +20,8 @@
 			$_SESSION['usuarioCidade'] = $resultado['cidade'];
 			$_SESSION['usuarioNiveisAcessoId'] = $resultado['niveis_acesso_id'];
 			$_SESSION['usuarioEmail'] = $resultado['email'];
-			if($_SESSION['usuarioNiveisAcessoId'] == "1" || $_SESSION['usuarioNiveisAcessoId'] == "0"){
+			if($_SESSION['usuarioNiveisAcessoId'] <=2){
 				header("Location: /adv");
-			}else if($_SESSION['usuarioNiveisAcessoId'] == "2"){
-				header("Location: colaborador.php");
 			}else{
 				header("Location: cliente.php");
 			}

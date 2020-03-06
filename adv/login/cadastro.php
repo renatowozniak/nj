@@ -12,14 +12,12 @@
 
     $inserir = "INSERT INTO usuarios (nome, cidade, email, senha, niveis_acesso_id)  VALUES ('".$nome."', '".$cidade."', '".$email."', '".$senha."', '1')";
 
-    mysqli_query($conn, $inserir);
-
     if (mysqli_query($conn, $inserir)) {
     header ('Location: ../cadastro?registro=sucesso');
 } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    header ('Location: ../cadastro?registro=error');
 }
 	}else{
-    echo 'Você não preencheu todos os campos.<br></br><br><a href="http://newjud.com/adv/cadastro">VOLTAR</a>';
+    header ('Location: ../cadastro?registro=vazio');
   }
 ?>

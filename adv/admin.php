@@ -2,19 +2,18 @@
 
 if(isset($_GET["tipo"])){
     if($_GET["tipo"]=="cadastro"){
-        include 'cadastrar.php';
+        include 'admin/cadastrar.php';
     }else if($_GET["tipo"]=="upload"){
         echo 'upload de arquivos';
+    }else if($_GET["tipo"]=="senha"){
+        include 'admin/senhacallcenter.php';
     }
 }else{
 ?>
-<h2>PARCEIROS</h2>
-<table>
-	<td>
-		<tr><a href="cadastro" class="admlink">CADASTRAR</a></tr>
-		<tr><a href="upload" class="admlink">UPLOAD DE ARQUIVOS</a></tr>
-	</td>
-</table>
+<h2>ADMIN</h2>
+	<a href="upload" class="admlink">UPLOAD DE ARQUIVOS</a><br>
+	<a href="cadastro" class="admlink">CADASTRAR PARCEIRO</a><br>
+	<a href="senha" class="admlink">SENHA DO CALL CENTER</a><br>
 <?php
 }
 ?>

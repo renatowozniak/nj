@@ -2,58 +2,164 @@
     session_start();
 
     if(empty($_SESSION['usuarioNome']) || empty($_SESSION['usuarioCidade']))
-        header('Location: /');
+        header('Location: /adv/login/');
 ?>
+
 <!DOCTYPE html>
-<html lang="pt_BR">
+<html lang="en">
 <head>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="css/styles.css" rel="stylesheet">
-    <link href="css/admin.css" rel="stylesheet">
-
-  <title>NEWJUD</title>
-
+	<title>NEWJUD</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
 </head>
 <body>
-    <?php include $_SERVER['DOCUMENT_ROOT'].'/core/layout/header.php'; ?>
-    <div class="corpotodo">
-        <div id="container">
-           <?php
+	
+	<div class="limiter">
+		<div class="container-login100">
+				<div class="login100-form validate-form" method="POST">
+ 				<?php
                 if($_SESSION['usuarioNiveisAcessoId']=='1'){
-           ?>
+					  	// ABRE MENU PRINCIPAL
+	            		if(empty($_GET["tipo"]) || ($_GET["tipo"]!='agenda' && $_GET["tipo"]!='acoes')){
+	           		?>
+					<span class="login100-form-title">
+						NEWJUD &#8226; <?php echo strtoupper($_SESSION['usuarioNome']); ?>
+					</span>
+					
+					<div class="container-login100-form-btn">
+						<a class="login100-form-btn" href="/adv/agenda">
+							AGENDA
+						</a>
+					</div>
 
-            <?php 
+					<div class="container-login100-form-btn">
+						<a class="login100-form-btn" href="/adv/acoes">
+							AÇÕES
+						</a>
+					</div>
+					<?php
+				// FECHA TIPO
+			} else{
+				echo '<a href="/adv/" class="voltarlink">< VOLTAR</a><br><br>';
+				include 'acesso.php';
+			}
+			?>
 
-            if(empty($_GET['tipo'])){ ?>
+			<?php
+	            }else if($_SESSION['usuarioNiveisAcessoId']=='2'){
+	        ?>
 
-             <div>
-                <div id="mainmenu"><h1>ARQUIVOS<h1><br>
-                <a class="linkAcesso" href="/adv/agenda">AGENDA</a>
-                <a class="linkAcesso" href="/adv/acoes">AÇÕES</a>
-            </div>
-            
-            <?php
-            /*if ($diretorio = opendir(".")){
-            while(false !== ($pasta = readdir($diretorio))) {
-                if(is_dir($pasta) and ($pasta != ".") and ($pasta != "..")){
-                    echo "<a href='$pasta'>$pasta</a><br>";
-                }
-            }
-                closedir($diretorio);
-            }*/
-            ?>
-        </div>
-            <?php
-                }else{
-                    include 'acesso.php';
-                }
+	        <span class="login100-form-title">
+						NEWJUD &#8226; <?php echo strtoupper($_SESSION['usuarioNome']); ?>
+					</span>
 
-            }else if($_SESSION['usuarioNiveisAcessoId']=='0'){
-                include 'admin.php';
-            }
-            ?>
-        </div>
-    </div>
+					
+
+					
+					<div class="container-login100-form-btn">
+						<a class="login100-form-btn" <?php if(file_exists("arquivos/call/".$_SESSION['usuarioCidade']."/segunda.xlsx")) echo 'href="arquivos/call/'.$_SESSION['usuarioCidade'].'/segunda.xlsx"'; ?>>
+							SEGUNDA-FEIRA
+						</a>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<a class="login100-form-btn" <?php if(file_exists("arquivos/call/".$_SESSION['usuarioCidade']."/terca.xlsx")) echo 'href="arquivos/call/'.$_SESSION['usuarioCidade'].'/terca.xlsx"'; ?>>
+							TERÇA-FEIRA
+						</a>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<a class="login100-form-btn" <?php if(file_exists("arquivos/call/".$_SESSION['usuarioCidade']."/quarta.xlsx")) echo 'href="arquivos/call/'.$_SESSION['usuarioCidade'].'/quarta.xlsx"'; ?>>
+							QUARTA-FEIRA
+						</a>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<a class="login100-form-btn" <?php if(file_exists("arquivos/call/".$_SESSION['usuarioCidade']."/quinta.xlsx")) echo 'href="arquivos/call/'.$_SESSION['usuarioCidade'].'/quinta.xlsx"'; ?>>
+							QUINTA-FEIRA
+						</a>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<a class="login100-form-btn" <?php if(file_exists("arquivos/call/".$_SESSION['usuarioCidade']."/sexta.xlsx")) echo 'href="arquivos/call/'.$_SESSION['usuarioCidade'].'/sexta.xlsx"'; ?>>
+							SEXTA-FEIRA
+						</a>
+					</div>
+
+	        <?php
+	            }else if($_SESSION['usuarioNiveisAcessoId']=='0'){
+	            	if(isset($_GET["tipo"]))
+	            		echo '<a href="/adv/" class="voltarlink">< VOLTAR</a><br><br>';
+
+	            	include 'admin.php';
+	            }
+			?>
+
+			<div class="text-center p-t-136">
+						
+						<a class="buttonsair" href="/adv/login/sair.php">
+							SAIR
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
+						<br>
+						<?php 
+							$iphone = strpos($_SERVER['HTTP_USER_AGENT'],"iPhone");
+							$android = strpos($_SERVER['HTTP_USER_AGENT'],"Android");
+							$palmpre = strpos($_SERVER['HTTP_USER_AGENT'],"webOS");
+							$berry = strpos($_SERVER['HTTP_USER_AGENT'],"BlackBerry");
+							$ipod = strpos($_SERVER['HTTP_USER_AGENT'],"iPod");
+							$ipad = strpos($_SERVER['HTTP_USER_AGENT'],"iPad");
+
+							if($iphone || $android || $palmpre || $ipod || $berry || $ipad == true) {
+
+							}else{
+								echo '<a class="txt2" href="http://newjud.com">
+										ACESSAR O SISTEMA ANTIGO
+										<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+									</a>';
+							}
+						?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
 </body>
 </html>

@@ -125,9 +125,10 @@ h1{
   .viewer{
     background-color: white;
     border: 2px solid #444;
+    width: 100%;
     border-collapse: collapse;
-    table-layout:fixed;
-    font-size: 18px;
+    table-layout: fixed;
+    font-size: 50px;
     margin: 2px;
     padding: 2px;
     font-family: arial;
@@ -200,4 +201,8 @@ h1{
   font-size: 25px;
   font-weight: bolder;
   color: #990000;
+}
+
+.acessotitulo{
+  font-weight: bolder;
 }

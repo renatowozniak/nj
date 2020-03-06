@@ -1,66 +1,88 @@
 <?php
-	session_start();
+    session_start();
+
+    if(isset($_SESSION['usuarioNome']) && isset($_SESSION['usuarioCidade']))
+        header('Location: /adv/');
 ?>
+
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <link rel="icon" href="imagens/favicon.ico">
-
-    <title>NEWJUD | Login</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/signin.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-  <body>
-    <div class="container">
-
-      <form class="form-signin" method="POST" action="valida.php">
-        <h2 class="form-signin-heading">Área Restrita</h2>
+<html lang="en">
+<head>
+  <title>NEWJUD | LOGIN</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->  
+  <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../vendor/animate/animate.css">
+<!--===============================================================================================-->  
+  <link rel="stylesheet" type="text/css" href="../vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../css/util.css">
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+  
+  <div class="limiter">
+    <div class="container-login100">
+        <form class="login110-form validate-form" method="POST" action="valida.php">
+        <h2 class="form-signin-heading">LOGIN</h2><br>
         <label for="inputEmail" class="sr-only">Email</label>
-        <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+        <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email" required>
         <label for="inputPassword" class="sr-only">Senha</label>
         <input type="password" name="senha" id="inputPassword" class="form-control" placeholder="Senha" required>
+        <br>
         <button class="btn btn-lg btn-danger btn-block" type="submit">Acessar</button>
+<br></br>
+        <p class="text-center text-danger">
+      <?php if(isset($_SESSION['loginErro'])){
+        echo $_SESSION['loginErro'];
+        unset($_SESSION['loginErro']);
+      }?>
+    </p>
+    <p class="text-center text-success">
+      <?php 
+      if(isset($_SESSION['logindeslogado'])){
+        echo $_SESSION['logindeslogado'];
+        unset($_SESSION['logindeslogado']);
+      }
+      ?>
+    </p>
       </form>
-	  <p class="text-center text-danger">
-			<?php if(isset($_SESSION['loginErro'])){
-				echo $_SESSION['loginErro'];
-				unset($_SESSION['loginErro']);
-			}?>
-		</p>
-		<p class="text-center text-success">
-			<?php 
-			if(isset($_SESSION['logindeslogado'])){
-				echo $_SESSION['logindeslogado'];
-				unset($_SESSION['logindeslogado']);
-			}
-			?>
-		</p>
-    </div> <!-- /container -->
+    
+        
+      </div>
+    </div>
+  </div>
+  
+  
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  
+<!--===============================================================================================-->  
+  <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/bootstrap/js/popper.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/tilt/tilt.jquery.min.js"></script>
+  <script >
+    $('.js-tilt').tilt({
+      scale: 1.1
+    })
+  </script>
+<!--===============================================================================================-->
+  <script src="js/main.js"></script>
+
+
     <script src="js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
