@@ -7,9 +7,10 @@
 
 <?php
   $cidade = $_SESSION['usuarioCidade'];
+  $parceiro = $_SESSION['usuarioNome'];
 
   $tipo = $_GET['tipo'];
-  $arquivo = 'arquivos/'.$tipo.'/'.$cidade.'.xlsx';
+  $arquivo = 'arquivos/'.$tipo.'/'.$cidade.'_'.$parceiro.'.xlsx';
 
 
 

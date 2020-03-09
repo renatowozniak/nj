@@ -49,6 +49,13 @@
 	font-size: 22px;
 	font-weight: bold;
 	text-align: center;
+	color: #22cc22;
+}
+
+.falha{
+	font-size: 22px;
+	font-weight: bold;
+	text-align: center;
 	color: #cc2222;
 }
 #cadcontent{

@@ -4,7 +4,7 @@ if(isset($_GET["tipo"])){
     if($_GET["tipo"]=="cadastro"){
         include 'admin/cadastrar.php';
     }else if($_GET["tipo"]=="upload"){
-        echo 'upload de arquivos';
+        include 'admin/upload.php';
     }else if($_GET["tipo"]=="senha"){
         include 'admin/senhacallcenter.php';
     }

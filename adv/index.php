@@ -68,9 +68,6 @@
 	        <span class="login100-form-title">
 						NEWJUD &#8226; <?php echo strtoupper($_SESSION['usuarioNome']); ?>
 					</span>
-
-					
-
 					
 					<div class="container-login100-form-btn">
 						<a class="login100-form-btn" <?php if(file_exists("arquivos/call/".$_SESSION['usuarioCidade']."/segunda.xlsx")) echo 'href="arquivos/call/'.$_SESSION['usuarioCidade'].'/segunda.xlsx"'; ?>>

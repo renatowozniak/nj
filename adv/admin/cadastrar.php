@@ -15,9 +15,9 @@
 		if($_GET["registro"]=="sucesso"){
 			echo '<br><span class="sucesso">Parceiro cadastrado com sucesso!</span>';
 		}else if($_GET["registro"]=="falha"){
-			echo '<br><span class="sucesso">Algum erro aconteceu!</span>';
+			echo '<br><span class="falha">Algum erro aconteceu!</span>';
 		}if($_GET["registro"]=="vazio"){
-			echo '<br><span class="sucesso">Preencha todos os campos!</span>';
+			echo '<br><span class="falha">Preencha todos os campos!</span>';
 		}
 	}
 	?>
