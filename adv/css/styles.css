@@ -128,23 +128,24 @@ h1{
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
-    font-size: 50px;
-    margin: 2px;
-    padding: 2px;
-    font-family: arial;
+    font-size: 14px;
+    font-family: Arial;
     margin-top: 17px;
     width: 600px;
+    word-break: break-all;
   }
 
-  .viewer, td, th{
-   width: 150px;
+.uploadtable, td, th{
+  font-weight: bold;
+  font-family: Calibri;
+}
+
+ .viewer, td, th{
+   padding: 2px;
+   white-space: normal;
    word-wrap:break-word;
   }
 
-  .agendaTitulo{
-    background-color: red;
-    color: blue;
-  }
 
   .download{
     color: #241571;
@@ -157,7 +158,7 @@ h1{
   }
 
   .agendatitulo{
-    font-size: 25px;
+    font-size: 15px;
     font-weight: bold;
   }
 
@@ -205,4 +206,20 @@ h1{
 
 .acessotitulo{
   font-weight: bolder;
+}
+
+.sucesso{
+  color: #229922;
+  font-weight: bolder;
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.falha{
+  color: #cc2222;
+  font-weight: bolder;
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
 }

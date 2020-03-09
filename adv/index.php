@@ -26,12 +26,12 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
 <!--===============================================================================================-->
 </head>
 <body>
-	
 	<div class="limiter">
-		<div class="container-login100">
+		<div class="container-login100"> 
 				<div class="login100-form validate-form" method="POST">
  				<?php
                 if($_SESSION['usuarioNiveisAcessoId']=='1'){
@@ -42,6 +42,7 @@
 						NEWJUD &#8226; <?php echo strtoupper($_SESSION['usuarioNome']); ?>
 					</span>
 					
+
 					<div class="container-login100-form-btn">
 						<a class="login100-form-btn" href="/adv/agenda">
 							AGENDA

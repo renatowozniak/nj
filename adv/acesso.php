@@ -10,9 +10,7 @@
   $parceiro = $_SESSION['usuarioNome'];
 
   $tipo = $_GET['tipo'];
-  $arquivo = 'arquivos/'.$tipo.'/'.$cidade.'_'.$parceiro.'.xlsx';
-
-
+  $arquivo = $_SERVER["DOCUMENT_ROOT"].'/arquivos/'.$tipo.'/'.$cidade.'_'.$parceiro.'.xlsx';
 
   if($tipo=='agenda') $tipocorrigido = 'AGENDA';
   else if($tipo=='acoes')$tipocorrigido = 'AÇÕES';
@@ -27,10 +25,10 @@
 
     echo "<table class='viewer' border=1 style='width:100%;'>";
     foreach ($agenda as $index=>$row) {
-      echo "<tr>";
+      echo "<tr style='max-width: 200px' >";
     foreach ($row as $column) {
-      if($index>0) echo "<td style='border:2px solid'><span class='agendatexto'>$column</span></td>";
-    else echo "<td bgcolor='#aa66ee' style='color:#fff; font-weight: bolder; border:2px solid black;'><span class='agendatitulo'>$column</span></td>";
+      if($index>0) echo "<td bgcolor='#fff' style='border:2px solid'><span class='agendatexto'>$column</span></td>";
+    else echo "<td bgcolor='#aa66ee' style='color:#fff; font-size: 15px;font-weight: bolder; border:2px solid black;'><span class='agendatitulo'>$column</span></td>";
     }
     echo "</tr>";
   }    
