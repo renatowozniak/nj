@@ -20,10 +20,11 @@
     		foreach (glob($file_path."*.rar") as $file) {
   				$files[] = $file;
   				$nome_arquivo = basename($file);
-
   				$nome_arquivo = explode('.rar', $nome_arquivo)[0];
 
-  				echo '<a href="'.$file.'" class="bancolink">'.$nome_arquivo.'</a><br>';
+
+
+  				echo '<a href="../downloads/p'.$index.'/'.$nome_arquivo.'.rar" class="bancolink">'.$nome_arquivo.'</a><br>';
 			}
     	}
 	}
