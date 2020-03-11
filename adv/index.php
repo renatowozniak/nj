@@ -3,6 +3,8 @@
 
     if(empty($_SESSION['usuarioNome']) || empty($_SESSION['usuarioCidade']))
         header('Location: /adv/login/');
+
+    $arquivos = '../../arquivos/call/'.$_SESSION['usuarioCidade'];
 ?>
 
 <!DOCTYPE html>
@@ -32,6 +34,7 @@
 <body>
 	<div class="limiter">
 		<div class="container-login100"> 
+			<!-- PÁGINA INICIAL - PARCEIRO -->
 				<div class="login100-form validate-form" method="POST">
  				<?php
                 if($_SESSION['usuarioNiveisAcessoId']=='1'){
@@ -57,49 +60,59 @@
 					<?php
 				// FECHA TIPO
 			} else{
-				echo '<a href="/adv/" class="voltarlink">< VOLTAR</a><br><br>';
+				echo '<a href="/adv/" class="voltarlink">&#9664; VOLTAR</a><br><br>';
 				include 'acesso.php';
 			}
-			?>
-
-			<?php
-	            }else if($_SESSION['usuarioNiveisAcessoId']=='2'){
+	        }else if($_SESSION['usuarioNiveisAcessoId']=='2'){
 	        ?>
 
-	        <span class="login100-form-title">
-						NEWJUD &#8226; <?php echo strtoupper($_SESSION['usuarioNome']); ?>
-					</span>
-					
+	        <!-- PÁGINA INICIAL - CALL CENTER -->
+
+	        <span class="login100-form-title"> NEWJUD &#8226; <?php echo strtoupper($_SESSION['usuarioNome']); ?> </span>
 					<div class="container-login100-form-btn">
-						<a class="login100-form-btn" <?php if(file_exists("arquivos/call/".$_SESSION['usuarioCidade']."/segunda.xlsx")) echo 'href="arquivos/call/'.$_SESSION['usuarioCidade'].'/segunda.xlsx"'; ?>>
-							SEGUNDA-FEIRA
-						</a>
+						<?php 
+						if(file_exists($_SERVER['DOCUMENT_ROOT'].'/arquivos/call/'.$_SESSION['usuarioCidade']."/segunda.xlsx")) 
+							echo '<a class="login100-form-btn" href="'.$arquivos.'/segunda.xlsx"> SEGUNDA-FEIRA </a>'; 
+						else
+							echo '<a class="login100-form-btn-dont"> SEGUNDA-FEIRA </a>'; 
+						?>
 					</div>
 
 					<div class="container-login100-form-btn">
-						<a class="login100-form-btn" <?php if(file_exists("arquivos/call/".$_SESSION['usuarioCidade']."/terca.xlsx")) echo 'href="arquivos/call/'.$_SESSION['usuarioCidade'].'/terca.xlsx"'; ?>>
-							TERÇA-FEIRA
-						</a>
+						<?php 
+						if(file_exists($_SERVER['DOCUMENT_ROOT'].'/arquivos/call/'.$_SESSION['usuarioCidade']."/terca.xlsx")) 
+							echo '<a class="login100-form-btn" href="'.$arquivos.'/terca.xlsx"> TERÇA-FEIRA </a>'; 
+						else
+							echo '<a class="login100-form-btn-dont"> TERÇA-FEIRA </a>'; 
+						?>
 					</div>
 
 					<div class="container-login100-form-btn">
-						<a class="login100-form-btn" <?php if(file_exists("arquivos/call/".$_SESSION['usuarioCidade']."/quarta.xlsx")) echo 'href="arquivos/call/'.$_SESSION['usuarioCidade'].'/quarta.xlsx"'; ?>>
-							QUARTA-FEIRA
-						</a>
+						<?php 
+						if(file_exists($_SERVER['DOCUMENT_ROOT'].'/arquivos/call/'.$_SESSION['usuarioCidade'].'/quarta.xlsx')) 
+							echo '<a class="login100-form-btn" href="'.$arquivos.'/quarta.xlsx"> QUARTA-FEIRA </a>'; 
+						else
+							echo '<a class="login100-form-btn-dont"> QUARTA-FEIRA </a>'; 
+						?>
 					</div>
 
 					<div class="container-login100-form-btn">
-						<a class="login100-form-btn" <?php if(file_exists("arquivos/call/".$_SESSION['usuarioCidade']."/quinta.xlsx")) echo 'href="arquivos/call/'.$_SESSION['usuarioCidade'].'/quinta.xlsx"'; ?>>
-							QUINTA-FEIRA
-						</a>
+						<?php 
+						if(file_exists($_SERVER['DOCUMENT_ROOT'].'/arquivos/call/'.$_SESSION['usuarioCidade']."/quinta.xlsx")) 
+							echo '<a class="login100-form-btn" href="'.$arquivos.'/quinta.xlsx"> QUINTA-FEIRA </a>'; 
+						else
+							echo '<a class="login100-form-btn-dont"> QUINTA-FEIRA </a>'; 
+						?>
 					</div>
 
 					<div class="container-login100-form-btn">
-						<a class="login100-form-btn" <?php if(file_exists("arquivos/call/".$_SESSION['usuarioCidade']."/sexta.xlsx")) echo 'href="arquivos/call/'.$_SESSION['usuarioCidade'].'/sexta.xlsx"'; ?>>
-							SEXTA-FEIRA
-						</a>
+						<?php 
+						if(file_exists($_SERVER['DOCUMENT_ROOT'].'/arquivos/call/'.$_SESSION['usuarioCidade']."/sexta.xlsx")) 
+							echo '<a class="login100-form-btn" href="'.$arquivos.'/sexta.xlsx"> SEXTA-FEIRA </a>'; 
+						else
+							echo '<a class="login100-form-btn-dont"> SEXTA-FEIRA </a>'; 
+						?>
 					</div>
-
 	        <?php
 	            }else if($_SESSION['usuarioNiveisAcessoId']=='0'){
 	            	if(isset($_GET["tipo"]))
@@ -110,7 +123,7 @@
 			?>
 
 			<div class="text-center p-t-136">
-						
+						<hr>
 						<a class="buttonsair" href="/adv/login/sair.php">
 							SAIR
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
@@ -139,9 +152,6 @@
 		</div>
 	</div>
 	
-	
-
-	
 <!--===============================================================================================-->	
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
@@ -158,6 +168,5 @@
 	</script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
-
 </body>
 </html>

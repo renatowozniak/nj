@@ -10,7 +10,7 @@
   $parceiro = $_SESSION['usuarioNome'];
 
   $tipo = $_GET['tipo'];
-  $arquivo = $_SERVER["DOCUMENT_ROOT"].'/arquivos/'.$tipo.'/'.$cidade.'_'.$parceiro.'.xlsx';
+  $arquivo = '../arquivos/'.$tipo.'/'.$cidade.'_'.$parceiro.'.xlsx';
 
   if($tipo=='agenda') $tipocorrigido = 'AGENDA';
   else if($tipo=='acoes')$tipocorrigido = 'AÇÕES';

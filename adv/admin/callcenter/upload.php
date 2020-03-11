@@ -15,7 +15,10 @@
 		<select id="cidade" name="cidade" class="form-control">
 		<?php
 			while($row = $parceiros->fetch_array()){ 
-				if(!empty($row['cidade']) && !empty($row['nome'])) echo '<option value="'.strtolower($row['cidade']).'">'.$row['cidade'].' ('.$row['nome'].')</option>';
+				$cidadecorrigido = $row['cidade']
+				$nomecorrigido = $row['nome'];
+
+				if(!empty($row['cidade']) && !empty($row['nome'])) echo '<option value="'.strtolower($cidadecorrigido).'">'.$row['cidade'].' ('.$row['nome'].')</option>';
 			}
 		?>
 		</select>

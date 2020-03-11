@@ -12,19 +12,17 @@ if(isset($_GET["tipo"])){
     }
 }else{
 ?>
-<h2>ADMIN</h2><br>
-		<h4>Parceiros</h4>
-		<a href="cadastro" class="admlink">CADASTRAR PARCEIRO</a><br>
+<span class="login100-form-title"> NEWJUD &#8226; ADMIN </span>
+		<h4>Parceiros</h4> 
 		<a href="upload" class="admlink">UPLOAD DE ARQUIVOS</a><br>
-		<hr>
+		<a href="cadastro" class="admlink">CADASTRAR PARCEIRO</a><br>
+		
 			<br>
-		<h4>Call Center</h4>	
-		<a href="senha" class="admlink">SENHA DO CALL CENTER</a><br>
-		<a href="uploadcall" class="admlink">UPLOAD DE ARQUIVOS</a><br>
-			<hr>
-			<br>
-	
-	
+		<h4>Call Center &#9742;</h4>	
+		<a href="uploadcall" class="admlink">UPLOAD DE AGENDAS</a><br>
+		<a href="cadastro" class="admlink">CADASTRAR ASSESSORA</a><br>
+		<a href="senha" class="admlink">TROCAR SENHA</a><br>
+		
 <?php
 }
 ?>

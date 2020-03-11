@@ -3,8 +3,6 @@
 	$nomedoarquivo = $_POST['cidade'];
 	$filetoupload = $_FILES['arquivo'];
 
-
-
 	$upload_path = $_SERVER["DOCUMENT_ROOT"]."/arquivos/".$tipo."/".$nomedoarquivo.'.xlsx';
 	$uploadOk = 1;
 
