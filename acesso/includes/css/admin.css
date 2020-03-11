@@ -1,0 +1,64 @@
+.cadform{
+	border: 2px solid #444;
+	font-size: 18px;
+}
+
+.cadastrotable{
+	font-size: 20px;
+	font-weight: bold;
+	border: 4px solid #666;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 0 auto;
+}
+
+#enviar{
+	font-weight: bold;
+	font-size: 22px;
+	background-color: #3366aa;
+	color: white;
+	border: 3px solid #222;
+	cursor: pointer;
+}
+
+#cadastroparceiro{
+	width: 100%;
+	margin: 0 auto;
+}
+
+.admlink{
+	margin: 20px;
+    background-color: #ccc;
+    border: 5px solid #666;
+    border-radius: 4px;
+    font-weight: bolder;
+    font-size: 25px;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    font-weight: bolder;
+    font-family: Arial;
+}
+
+.admlink:hover{
+	text-decoration: none;
+    background-color: #ddd;
+}
+
+.sucesso{
+	font-size: 22px;
+	font-weight: bold;
+	text-align: center;
+	color: #22cc22;
+}
+
+.falha{
+	font-size: 22px;
+	font-weight: bold;
+	text-align: center;
+	color: #cc2222;
+}
+#cadcontent{
+	width: 100%;
+	text-align: center;
+}

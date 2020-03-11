@@ -5,6 +5,8 @@
         header('Location: /adv/login/');
 
     $arquivos = '../../arquivos/call/'.$_SESSION['usuarioCidade'];
+
+   $GLOBALS['x'] = 'acesso';
 ?>
 
 <!DOCTYPE html>

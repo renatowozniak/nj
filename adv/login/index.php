@@ -29,7 +29,6 @@
 <!--===============================================================================================-->
 </head>
 <body>
-  
   <div class="limiter">
     <div class="container-login100">
         <form class="login110-form validate-form" method="POST" action="valida.php">
@@ -42,10 +41,12 @@
         <button class="btn btn-lg btn-danger btn-block" type="submit">Acessar</button>
 <br></br>
         <p class="text-center text-danger">
-      <?php if(isset($_SESSION['loginErro'])){
-        echo $_SESSION['loginErro'];
-        unset($_SESSION['loginErro']);
-      }?>
+      <?php
+        if(isset($_SESSION['loginErro'])){
+          echo $_SESSION['loginErro'];
+          unset($_SESSION['loginErro']);
+        }
+      ?>
     </p>
     <p class="text-center text-success">
       <?php 

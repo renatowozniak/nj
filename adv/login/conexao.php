@@ -1,8 +1,8 @@
 <?php
 	$servidor = "localhost";
-	$usuario = "root"; // newjud55_suporte
-	$senha = ""; //Sup0rt3
-	$dbname = "newjudtest"; //newjud55_newjudbd
+	$usuario = "newjud55_suporte"; // newjud55_suporte
+	$senha = "Sup0rt3"; //Sup0rt3
+	$dbname = "newjud55_newjudbd"; //newjud55_newjudbd
 	//$dbname = "funvildevendas";
 	
 	//Criar a conexao
