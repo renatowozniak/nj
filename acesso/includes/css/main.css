@@ -218,7 +218,6 @@ iframe {
   max-width: 100%;
 }
 
-
 /*------------------------------------------------------------------
 [  ]*/
 .login100-form {
@@ -533,5 +532,5 @@ iframe {
 }
 
 hr{
-  border: 3px solid #bbb;
+  border: 2px solid #aab;
 }

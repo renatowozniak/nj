@@ -1,13 +1,14 @@
 <?php
   require_once __DIR__.'/../core/SimpleXLSX.php';
+  require_once __DIR__.'/../core/util.php';
 
   ini_set('error_reporting', E_ALL);
   ini_set('display_errors', true);
 ?>
 
 <?php
-  $cidade = $_SESSION['usuarioCidade'];
-  $parceiro = $_SESSION['usuarioNome'];
+  $cidade = toLink($_SESSION['usuarioCidade']);
+  $parceiro = toLink($_SESSION['usuarioNome']);
 
   $tipo = $_GET['tipo'];
   $arquivo = '../arquivos/'.$tipo.'/'.$cidade.'_'.$parceiro.'.xlsx';

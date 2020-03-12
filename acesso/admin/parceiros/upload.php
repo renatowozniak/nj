@@ -1,5 +1,7 @@
 <?php
 	include $_SERVER['DOCUMENT_ROOT'].'/acesso/login/conexao.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/core/util.php';
+
 	$sql = 'SELECT * FROM usuarios WHERE niveis_acesso_id=1';
 
 	$parceiros = $conn->query($sql);
@@ -15,7 +17,12 @@
 		<select id="cidade" name="cidade" class="form-control">
 		<?php
 			while($row = $parceiros->fetch_array()){ 
-				if(!empty($row['cidade']) && !empty($row['nome'])) echo '<option value="'.strtolower($row['cidade']).'_'.strtolower($row['nome']).'">'.$row['cidade'].' ('.$row['nome'].')</option>';
+				$cidadecorrigido = toLink($row['cidade']);
+				$nomecorrigido = toLink($row['nome']);
+
+				echo $cidadecorrigido;
+
+				if(!empty($row['cidade']) && !empty($row['nome'])) echo '<option value="'.$cidadecorrigido.'_'.$nomecorrigido.'">'.$row['cidade'].' ('.$row['nome'].')</option>';
 			}
 		?>
 		</select>

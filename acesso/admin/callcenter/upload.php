@@ -1,12 +1,14 @@
 <?php
-	include $_SERVER['DOCUMENT_ROOT'].'/adv/login/conexao.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/acesso/login/conexao.php';
+	include_once($_SERVER['DOCUMENT_ROOT'].'/core/util.php');
+
 	$sql = 'SELECT * FROM usuarios WHERE niveis_acesso_id=2';
 
 	$parceiros = $conn->query($sql);
 ?>
 
 <h2>UPLOAD</h2>
-<form id="upload" method="POST" action="/adv/admin/callcenter/uploadarquivos.php" enctype="multipart/form-data">
+<form id="upload" method="POST" action="/acesso/admin/callcenter/uploadarquivos.php" enctype="multipart/form-data">
 
 	<table class="uploadtable">
 		<tr>
@@ -15,10 +17,10 @@
 		<select id="cidade" name="cidade" class="form-control">
 		<?php
 			while($row = $parceiros->fetch_array()){ 
-				$cidadecorrigido = $row['cidade']
-				$nomecorrigido = $row['nome'];
+				$cidadecorrigido = toLink($row['cidade']);
+				$nomecorrigido = toLink($row['nome']);
 
-				if(!empty($row['cidade']) && !empty($row['nome'])) echo '<option value="'.strtolower($cidadecorrigido).'">'.$row['cidade'].' ('.$row['nome'].')</option>';
+				if(!empty($row['cidade']) && !empty($row['nome'])) echo '<option value="'.$cidadecorrigido.'">'.$row['cidade'].' ('.$row['nome'].')</option>';
 			}
 		?>
 		</select>

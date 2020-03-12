@@ -8,8 +8,7 @@
 
     $arquivos = '../../arquivos/call/'.$_SESSION['usuarioCidade'];
 ?>
-
-<!DOCTYPE html>
+<!DOCTYPE html/>
 <html lang="en">
 <head>
 	<title>NEWJUD</title>
@@ -36,13 +35,13 @@
 <body>
 	<div class="limiter">
 		<div class="container-login100"> 
-			<!-- PÁGINA INICIAL - PARCEIRO -->
 				<div class="login100-form validate-form" method="POST">
  				<?php
                 if($_SESSION['usuarioNiveisAcessoId']=='1'){
 					  	// ABRE MENU PRINCIPAL
 	            		if(empty($_GET["tipo"]) || ($_GET["tipo"]!='agenda' && $_GET["tipo"]!='acoes' && $_GET["tipo"]!='bancario' && $_GET["tipo"]!='previdenciario')){
 	           		?>
+	           		<!-- PÁGINA INICIAL - PARCEIRO -->
 					<span class="login100-form-title">
 						NEWJUD &#8226; <?php echo strtoupper($_SESSION['usuarioNome']); ?>
 					</span>
@@ -142,7 +141,7 @@
 	            }
 			?>
 
-			<div class="text-center p-t-136">
+			<div class="text-center p-t-35">
 						<hr>
 						<a class="buttonsair" href="/acesso/login/sair.php">
 							SAIR
